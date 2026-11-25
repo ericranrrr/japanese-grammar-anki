@@ -1,0 +1,4 @@
+interface:
+  display_name: "日语语法 Anki 制卡"
+  short_description: "预览日语语法题并安全导入 Anki"
+  default_prompt: "请使用 $japanese-grammar-anki 分析这张日语语法截图并先生成 Anki 卡片预览。"
