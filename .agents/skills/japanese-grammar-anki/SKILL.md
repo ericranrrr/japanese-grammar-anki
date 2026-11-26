@@ -51,6 +51,18 @@ Create Anki cards from Japanese grammar exercise screenshots. The user normally 
    Run this once per confirmed note.
 8. Report every Anki note ID. If duplicate detection blocks a note, report the existing note ID and wait for direction.
 
+## Translation correction screenshots (今日一句话)
+
+The user may send a screenshot containing a Chinese sentence (e.g. under “今日一句话”) and their own Japanese translation (e.g. under “翻译”). For these, correct first, then make the card:
+
+1. Transcribe the Chinese source and the user's translation exactly. If anything is unclear, ask before continuing.
+2. Correct the translation in Chinese:
+   - Give the corrected translation (natural, faithful to the source meaning and tense).
+   - List each problem in a table: 原译片段 → 修改 → 原因 (particles, verb transitivity, word choice, nuance, tense, etc.).
+   - Offer 1–2 alternative phrasings (e.g. written vs. spoken) and the key grammar points.
+3. In the same reply, show the `翻译纠错` card preview (payload `type: "翻译纠错"`, `stem` = Chinese source, `original_translation` = user's translation, `answer` = corrected translation, `tags` include `今日一句话`). Run the preview command if AnkiConnect is reachable; otherwise show the preview from the payload and mark the duplicate check as pending.
+4. Stop and wait for “确认导入”. If the user asks for changes to the correction, update both the correction and the payload, then preview again.
+
 ## Payload
 
 Use English keys for the script:
